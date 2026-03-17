@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export interface Post {
     id: number,
@@ -17,19 +18,20 @@ export default function Home() {
             .then(response => response.json())
             .then(data => {
                 console.log(data)
-                setPost(data);
+                setPosts(data);
             });
     }, []);
 
+
     return (
         posts.length <= 0
-        ? <div>로딩중...</div>
-        : <ul>
-            {posts.map((post) => (
-                <li key={post.id} className="p-2">
-                    {post.id}. {post.title}
-                </li>
-            ))}
-        </ul>
-    );
+            ? <div>로딩중..</div>
+            : <ul>
+                {posts.map((post) => (
+                    <li key={post.id} className="p-2">
+                        <Link href={`/posts/${post.id}`}>{post.id}. {post.title}</Link>
+                    </li>
+                ))}
+            </ul>
+    )
 }
