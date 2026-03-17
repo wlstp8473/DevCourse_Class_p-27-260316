@@ -7,3 +7,7 @@ export default function Home() {
     </>
   );
 }
+/*
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+npm run dev
+*/
