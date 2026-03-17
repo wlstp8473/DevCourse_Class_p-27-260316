@@ -1,13 +1,7 @@
 "use client"
 
-import { useEffect, useState } from "react";
 import Link from "next/link";
-
-export interface Post {
-    id: number,
-    title: string,
-    content: string
-}
+import { useEffect, useState } from "react";
 
 export default function Home() {
 
