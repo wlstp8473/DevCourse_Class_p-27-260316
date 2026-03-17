@@ -2,9 +2,10 @@
 
 import { useEffect, useState } from "react";
 
-interface Post {
+export interface Post {
     id: number,
-    title: string
+    title: string,
+    content: string
 }
 
 export default function Home() {
@@ -16,7 +17,7 @@ export default function Home() {
             .then(response => response.json())
             .then(data => {
                 console.log(data)
-                setPosts(data);
+                setPost(data);
             });
     }, []);
 
